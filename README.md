@@ -11,7 +11,7 @@ Features
 +Panoramic X-ray image analysis for diagnosis assistance, including:
 
   + Bone level assessment
-  + Detection of wisdom teeth and tooth buds
+  + Detection of wisdom teeth , tooth buds and caries
   + Teeth segmentation using U-Net model
 
 
