@@ -23,17 +23,17 @@ This project integrates efficient clinical management with the power of Deep Lea
 The system implements Role-Based Access Control to ensure data security and compliance:
 
 * **Clinic Admin (مدير العيادة):**
-    * Full system management, including staff (dentists and employees) and appointments.
-    * Authority to approve or reject user requests.
+    * Full system management, including staff (dentists and employees) and appointments.
+    * Authority to approve or reject user requests.
 * **Dentists (أطباء الأسنان):**
-    * Manages patients and appointments.
-    * Uploads and analyzes panoramic X-ray images using AI tools.
+    * Manages patients and appointments.
+    * Uploads and analyzes panoramic X-ray images using AI tools.
 * **Dental Lab Technicians (فنيو المختبر السني):**
-    * Uploads and processes panoramic X-ray images.
-    * Applies AI models for image processing and analysis.
+    * Uploads and processes panoramic X-ray images.
+    * Applies AI models for image processing and analysis.
 * **Patients (المرضى):**
-    * Online appointment booking.
-    * Uploads personal panoramic X-ray images and views diagnostic reports.
+    * Online appointment booking.
+    * Uploads personal panoramic X-ray images and views diagnostic reports.
 
 ---
 
@@ -48,7 +48,20 @@ This fundamental step accurately identifies the position and boundaries of each 
 * **Model Used:** **U-Net**, a leading Convolutional Neural Network (CNN) architecture for medical image segmentation tasks.
 * **Objective:** To achieve accurate **Automatic Semantic Segmentation** of teeth from panoramic radiographic images.
 * **Data Training:** Utilizes an anonymized dataset of **116 patients'** panoramic images, scaled to **(512x512)** and trained over **200 Epochs** for optimal results.
+
+#### **📊 Segmentation Results**
+
+The images below illustrate the segmentation process and the successful output of the U-Net model:
+| Input and Initial Result | Final Predicted Segmentation |
+| :---: | :---: |
+| ![Model Result: Original image, grayscale, and contours](Model Result.png) | ![Model training result: Predicted image after training](Model training result .png) |
+
 * **Post-Processing:** Application of **Connected Component Analysis (CCA)** and **Otsu's Thresholding** to identify connected objects (teeth) and measure their dimensions (length and width) precisely.
+
+#### **📏 Accurate CCA Measurements**
+
+The following image shows how CCA is used to calculate precise measurements for each tooth (length and width in pixels).
+![Connected Component Analysis output showing measurements](CCS Analysis.png)
 
 ### **2. Preliminary Diagnostic Analysis (AI-Powered Diagnostic Features)**
 
@@ -60,6 +73,16 @@ Based on accurate tooth segmentation, the system applies analytical algorithms t
 | **3** | **Bone Level and Absorption Assessment** | Defining specific Regions of Interest (**ROI**) for the upper and lower jaws, followed by **contrast enhancement** and a color threshold (245) to calculate the **pixel ratio** representing bone density/loss. |
 | **4** | **Dental Buds Detection** | Drawing two **semi-circular arcs** (upper and lower) based on empirical coordinates and checking for their intersection with **red (tooth root) pixels** to infer the presence of developing buds. |
 | **5** | **Wisdom Teeth Status Detection** | Dividing the image into four quadrants around the center, defining approximate search areas for third molars, and verifying the presence of tooth pixels within these specific regions. |
+
+#### **🔎 Visual Diagnostic Outputs**
+
+| Diagnostic Case | Visual Output | Description |
+| :---: | :---: | :--- |
+| **Caries Detection** | ![Caries (Cavities) Detection output image](Caries (Cavities) Detection.png) | Caries are highlighted in **dark red** based on low-brightness color analysis. |
+| **Restorations Detection** | ![Restorations Detection output image](Restorations Detection.png) | Existing restorations (crowns, fillings) are outlined in **blue** based on high-brightness analysis. |
+| **Bone Level Assessment** | ![Bone Level and Absorption Assessment output image](Bone Level and Absorption Assessment .png) | Demonstrates the ROI definition and thresholding used to assess bone level around the roots. |
+| **Dental Buds (Example)** | ![Absence of tooth buds output image](Absence of tooth buds.png) | Shows the semi-circular arcs used for automated detection in a case where buds are absent. (See also: ![Tooth buds output image](tooth buds.png)) |
+| **Wisdom Teeth Status** | ![Wisdom Teeth Status Detection output image](Wisdom Teeth Status Detection.png) | Illustrates the four-quadrant approach and target regions used to check for the presence and status of third molars. |
 
 ---
 
