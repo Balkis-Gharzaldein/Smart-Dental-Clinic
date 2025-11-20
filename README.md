@@ -54,14 +54,14 @@ This fundamental step accurately identifies the position and boundaries of each 
 The images below illustrate the segmentation process and the successful output of the U-Net model:
 | Input and Initial Result | Final Predicted Segmentation |
 | :---: | :---: |
-| ![Model Result: Original image, grayscale, and contours](Model Result.png) | ![Model training result: Predicted image after training](Model training result .png) |
+| ![Model Result: Original image, grayscale, and contours](**[ضع الرابط المباشر لصورة Model Result.png هنا]**) | ![Model training result: Predicted image after training](**[ضع الرابط المباشر لصورة Model training result .png هنا]**) |
 
 * **Post-Processing:** Application of **Connected Component Analysis (CCA)** and **Otsu's Thresholding** to identify connected objects (teeth) and measure their dimensions (length and width) precisely.
 
 #### **📏 Accurate CCA Measurements**
 
 The following image shows how CCA is used to calculate precise measurements for each tooth (length and width in pixels).
-![Connected Component Analysis output showing measurements](CCS Analysis.png)
+![Connected Component Analysis output showing measurements](**[ضع الرابط المباشر لصورة CCS Analysis.png هنا]**)
 
 ### **2. Preliminary Diagnostic Analysis (AI-Powered Diagnostic Features)**
 
@@ -78,11 +78,11 @@ Based on accurate tooth segmentation, the system applies analytical algorithms t
 
 | Diagnostic Case | Visual Output | Description |
 | :---: | :---: | :--- |
-| **Caries Detection** | ![Caries (Cavities) Detection output image](Caries (Cavities) Detection.png) | Caries are highlighted in **dark red** based on low-brightness color analysis. |
-| **Restorations Detection** | ![Restorations Detection output image](Restorations Detection.png) | Existing restorations (crowns, fillings) are outlined in **blue** based on high-brightness analysis. |
-| **Bone Level Assessment** | ![Bone Level and Absorption Assessment output image](Bone Level and Absorption Assessment .png) | Demonstrates the ROI definition and thresholding used to assess bone level around the roots. |
-| **Dental Buds (Example)** | ![Absence of tooth buds output image](Absence of tooth buds.png) | Shows the semi-circular arcs used for automated detection in a case where buds are absent. (See also: ![Tooth buds output image](tooth buds.png)) |
-| **Wisdom Teeth Status** | ![Wisdom Teeth Status Detection output image](Wisdom Teeth Status Detection.png) | Illustrates the four-quadrant approach and target regions used to check for the presence and status of third molars. |
+| **Caries Detection** | ![Caries (Cavities) Detection output image](**[ضع الرابط المباشر لصورة Caries (Cavities) Detection.png هنا]**) | Caries are highlighted in **dark red** based on low-brightness color analysis. |
+| **Restorations Detection** | ![Restorations Detection output image](**[ضع الرابط المباشر لصورة Restorations Detection.png هنا]**) | Existing restorations (crowns, fillings) are outlined in **blue** based on high-brightness analysis. |
+| **Bone Level Assessment** | ![Bone Level and Absorption Assessment output image](**[ضع الرابط المباشر لصورة Bone Level and Absorption Assessment .png هنا]**) | Demonstrates the ROI definition and thresholding used to assess bone level around the roots. |
+| **Dental Buds (Example)** | ![Absence of tooth buds output image](**[ضع الرابط المباشر لصورة Absence of tooth buds.png هنا]**) | Shows the semi-circular arcs used for automated detection in a case where buds are absent. (See also: ![Tooth buds output image](**[ضع الرابط المباشر لصورة tooth buds.png هنا]**)) |
+| **Wisdom Teeth Status** | ![Wisdom Teeth Status Detection output image](**[ضع الرابط المباشر لصورة Wisdom Teeth Status Detection.png هنا]**) | Illustrates the four-quadrant approach and target regions used to check for the presence and status of third molars. |
 
 ---
 
