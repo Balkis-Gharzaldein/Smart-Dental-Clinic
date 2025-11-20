@@ -1,4 +1,3 @@
-(** CCS Analysis.png **)
 # 🦷 Smart Dental Clinic – AI-Enhanced Dental Management System
 
 A comprehensive backend system built with **Django REST Framework** and enhanced with **advanced Artificial Intelligence (AI) capabilities**. It is designed to streamline the management of dental clinics, patients, appointments, panoramic X-ray images, and diagnostic reports.
